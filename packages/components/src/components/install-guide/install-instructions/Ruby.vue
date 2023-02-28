@@ -14,7 +14,7 @@
 import VCodeSnippet from '@/components/CodeSnippet.vue';
 
 export default {
-  name: 'Ruby',
+  name: 'RubyInstructions',
   components: { VCodeSnippet },
 };
 </script>

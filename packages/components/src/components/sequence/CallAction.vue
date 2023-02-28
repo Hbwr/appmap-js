@@ -267,6 +267,7 @@ export default {
         this.selectedEvents.find((event) => this.actionSpec.eventIds.includes(event.id))
       ) {
         result.push('selected');
+        // eslint-disable-next-line vue/no-async-in-computed-properties
         this.$nextTick(() =>
           this.$el
             .querySelector('.self-call, .call-line-segment')

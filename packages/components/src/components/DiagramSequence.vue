@@ -91,6 +91,7 @@ export default {
       const result = new DiagramSpec(this.diagram);
       this.collapsedActions = []; // eslint-disable-line vue/no-side-effects-in-computed-properties
       for (let index = 0; index < result.actions.length; index++)
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         this.$set(this.collapsedActions, index, false);
       return result;
     },

@@ -102,6 +102,7 @@ export default {
 
       // Cache the expanded state on the event
       if (this.cacheState) {
+        // eslint-disable-next-line vue/no-mutating-props
         this.event.$hidden.expanded = this.expanded;
       }
 
@@ -122,10 +123,12 @@ export default {
       });
     },
     async getOutput() {
-      return new Promise((resolve) => this.$nextTick(() => resolve(this.$refs.node.$refs.flowOut)));
+      await this.$nextTick();
+      return this.$refs.node.$refs.flowOut;
     },
     async getRef(ref) {
-      return new Promise((resolve) => this.$nextTick(() => resolve(this.$refs[ref])));
+      await this.$nextTick();
+      return this.$refs[ref];
     },
     initialize() {
       if (
